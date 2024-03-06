@@ -9,17 +9,18 @@ while True:
     binary_int = int.from_bytes(byte_array, byteorder="big")
 
     # Formats bytes in byte_array as 8-bit binary strings
-    # padding for length consistency
-    # then joins for UTF-8 binary representation
+    # padding for length consistency then joins 
     binary_string = ''.join(format(byte, '08b') for byte in byte_array)
 
     # Split a binary string into fixed-length chunks
     binary_string_split = ' '.join(binary_string[i:i+8] for i in range(0, len(binary_string), 8))
 
-    # Getting the converted binary characters
+    # Print the converted binary characters
     print("Binary: " + binary_string_split)
     print("Number: " + str(binary_int))
 
+    # If i_want_to_input_binary_string is set, type in a binary string
+    # to convert
     # Remove spaces and join binary strings into a single string
     if i_want_to_input_binary_string:
         print("Type a binary string to convert (with spaces): ")
