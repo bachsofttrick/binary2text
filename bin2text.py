@@ -17,7 +17,6 @@ while True:
 
     # Print the converted binary characters
     print("Binary: " + binary_string_split)
-    print("Number: " + str(binary_int))
 
     # If i_want_to_input_binary_string is set, type in a binary string
     # to convert
@@ -31,6 +30,7 @@ while True:
     # converts each to integer (string should be interpreted as a binary number)
     # constructs bytes object from integers.
     utf8_result = bytes(int(binary_string[i:i+8], 2) for i in range(0, len(binary_string), 8))
-    print("UTF-8 byte: ", utf8_result)
+    print("UTF-8 hex: ", utf8_result)
+    print("UTF-8 code point: ", input_string.encode('unicode_escape'))
     print("UTF-8 decoded: ", utf8_result.decode('utf-8'))
     print()
